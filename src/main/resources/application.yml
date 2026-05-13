@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 这里的 bilibili_clone 是我们之前建的数据库名，如果你用了别的名字请修改
+    url: jdbc:mysql://localhost:3306/bilibili_clone?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 20050131wyc
