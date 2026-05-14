@@ -52,4 +52,11 @@ public class VideoController {
     public Result<List<Video>> searchVideos(@RequestParam("keyword") String keyword) {
         return Result.success(videoService.searchVideos(keyword));
     }
+
+    @Operation(summary = "获取指定UP主的视频列表", description = "公开接口，查看他人主页时调用")
+    @GetMapping("/user/{userId}")
+    public Result<List<Video>> getUserVideos(@PathVariable("userId") Long userId) {
+        // 直接复用你之前写好的 Service 方法，只需把参数换成传进来的目标 userId
+        return Result.success(videoService.getMyVideos(userId));
+    }
 }
